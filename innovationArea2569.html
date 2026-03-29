@@ -14,15 +14,15 @@
     .score-value { font-size: 2em; font-weight: bold; color: #1b5e20; margin-top: 5px; }
     .voter-count { text-align: center; font-size: 0.9em; color: #555; margin-top: 10px; width: 100%; }
     
-    /* ส่วนที่เพิ่มใหม่สำหรับรายชื่อผู้ส่งคะแนน */
     .voted-list { margin-top: 10px; font-size: 0.85em; color: #666; text-align: center; }
     .voted-badge { display: inline-block; background: #ddd; padding: 2px 8px; border-radius: 12px; margin: 2px; }
     .voted-badge.done { background: #c8e6c9; color: #1b5e20; border: 1px solid #81c784; }
 
     table { border-collapse: collapse; width: 100%; margin-top: 20px; }
     th { background-color: #f2f2f2; border: 1px solid #ccc; padding: 10px; text-align: center; }
-    td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+    td { border: 1px solid #ccc; padding: 10px; text-align: center; vertical-align: top; }
     .criteria { text-align: left; }
+    .desc-text { font-size: 0.85em; color: #555; display: block; margin-top: 6px; font-weight: normal; line-height: 1.4; }
     input[type="number"] { width: 60px; padding: 8px; text-align: center; border: 1px solid #ccc; border-radius: 4px; }
     button { margin-top: 20px; padding: 12px 20px; background-color: #1976d2; color: white; border: none; cursor: pointer; font-size: 16px; border-radius: 5px; width: 100%; font-weight: bold; }
     button:hover { background-color: #1565c0; }
@@ -68,42 +68,57 @@
 
     <table>
       <tr>
-        <th style="width: 40%;">เกณฑ์การประเมิน</th>
-        <th>คะแนนเต็ม</th>
+        <th style="width: 45%;">เกณฑ์การประเมินและแนวทางให้คะแนน</th>
+        <th style="width: 10%;">คะแนนเต็ม</th>
         <th id="th-area1">พื้นที่ 1</th>
         <th id="th-area2">พื้นที่ 2</th>
         <th id="th-area3">พื้นที่ 3</th>
       </tr>
       <tr>
-        <td class="criteria"><strong>1. ผลสัมฤทธิ์เชิงประจักษ์</strong></td>
+        <td class="criteria">
+          <strong>1. ผลสัมฤทธิ์เชิงประจักษ์</strong>
+          <span class="desc-text">พิจารณาจากการเปลี่ยนแปลงของสถานการณ์ปัญหามลพิษที่ลดลงอย่างเป็นรูปธรรม (เช่น ขยะลดลง ฝุ่นควันลดลง น้ำสะอาดขึ้น) รวมถึงผลกระทบเชิงบวกต่อคุณภาพชีวิตของประชาชน สิ่งแวดล้อม และเศรษฐกิจของชุมชนในพื้นที่ [อ้างอิง: มิติผลลัพธ์และผลกระทบ]</span>
+        </td>
         <td>30</td>
         <td><input type="number" name="area1_1" max="30" min="0" required></td>
         <td><input type="number" name="area2_1" max="30" min="0" required></td>
         <td><input type="number" name="area3_1" max="30" min="0" required></td>
       </tr>
       <tr>
-        <td class="criteria"><strong>2. กระบวนการมีส่วนร่วม</strong></td>
+        <td class="criteria">
+          <strong>2. กระบวนการมีส่วนร่วม</strong>
+          <span class="desc-text">พิจารณาการทำงานแบบบูรณาการร่วมกันของทุกภาคส่วน (ภาครัฐ องค์กรปกครองส่วนท้องถิ่น เอกชน ประชาชน) โดยประชาชนมีบทบาทตั้งแต่ร่วมคิด ร่วมทำ ร่วมตัดสินใจ และนำไปสู่การเสริมอำนาจให้ชุมชนจัดการตนเองได้ [อ้างอิง: กลไกการมีส่วนร่วมแบบไล่ระดับ]</span>
+        </td>
         <td>25</td>
         <td><input type="number" name="area1_2" max="25" min="0" required></td>
         <td><input type="number" name="area2_2" max="25" min="0" required></td>
         <td><input type="number" name="area3_2" max="25" min="0" required></td>
       </tr>
       <tr>
-        <td class="criteria"><strong>3. ศักยภาพในการขยายผล</strong></td>
+        <td class="criteria">
+          <strong>3. ศักยภาพในการขยายผล</strong>
+          <span class="desc-text">พิจารณาความสามารถในการนำโครงสร้าง กระบวนการ หรือรูปแบบการแก้ไขปัญหาของพื้นที่นี้ ไปเป็นต้นแบบเพื่อประยุกต์ใช้ในพื้นที่อื่นที่มีความพร้อมและบริบทปัญหาใกล้เคียงกันได้จริง [อ้างอิง: เงื่อนไขความพร้อมในการขยายผล]</span>
+        </td>
         <td>25</td>
         <td><input type="number" name="area1_3" max="25" min="0" required></td>
         <td><input type="number" name="area2_3" max="25" min="0" required></td>
         <td><input type="number" name="area3_3" max="25" min="0" required></td>
       </tr>
       <tr>
-        <td class="criteria"><strong>4. การได้รับการยอมรับ</strong></td>
+        <td class="criteria">
+          <strong>4. การได้รับการยอมรับ</strong>
+          <span class="desc-text">พิจารณาจากความน่าเชื่อถือและการยอมรับจากสังคม เช่น การผ่านเกณฑ์มาตรฐานภาครัฐ การได้รับรางวัลด้านการจัดการสิ่งแวดล้อมระดับจังหวัดหรือประเทศ หรือเป็นศูนย์การเรียนรู้ที่หน่วยงานอื่นเข้ามาศึกษาดูงาน [อ้างอิง: หลักการคัดเลือกพื้นที่ต้นแบบ]</span>
+        </td>
         <td>10</td>
         <td><input type="number" name="area1_4" max="10" min="0" required></td>
         <td><input type="number" name="area2_4" max="10" min="0" required></td>
         <td><input type="number" name="area3_4" max="10" min="0" required></td>
       </tr>
       <tr>
-        <td class="criteria"><strong>5. ความพร้อมของข้อมูล</strong></td>
+        <td class="criteria">
+          <strong>5. ความพร้อมของข้อมูล</strong>
+          <span class="desc-text">พิจารณาจากการตัดสินใจและการกำหนดมาตรการที่อิงข้อมูลและหลักฐานเชิงประจักษ์ (Evidence-Based) มีระบบการจัดเก็บข้อมูลเชิงปริมาณและคุณภาพ รวมถึงกลไกการติดตามประเมินผลที่สามารถตรวจสอบได้ [อ้างอิง: ระบบติดตามและการเรียนรู้เพื่อการปรับปรุง]</span>
+        </td>
         <td>10</td>
         <td><input type="number" name="area1_5" max="10" min="0" required></td>
         <td><input type="number" name="area2_5" max="10" min="0" required></td>
@@ -124,13 +139,12 @@
   // ลิงก์ Web App
   const scriptURL = "https://script.google.com/macros/s/AKfycbwUjYMppNYPUjs6WWwnaM7lVqBY5RkEulb-xmCjAcOr73BOQWELfha1NuaVyNg_iGIZbg/exec"; 
 
-  let alreadyVoted = []; // เก็บรายชื่อผู้ที่ส่งแล้วเพื่อใช้ตรวจสอบตอนกดปุ่ม
+  let alreadyVoted = [];
 
   function fetchSummary() {
     fetch(scriptURL)
       .then(response => response.json())
       .then(data => {
-        // อัปเดตข้อมูลบนหน้าจอ
         document.getElementById('score-area1').innerText = data.area1 || 0;
         document.getElementById('score-area2').innerText = data.area2 || 0;
         document.getElementById('score-area3').innerText = data.area3 || 0;
@@ -149,7 +163,6 @@
           document.getElementById('th-area3').innerText = data.area3Name;
         }
 
-        // แสดงผลรายชื่อผู้ประเมิน
         alreadyVoted = data.votedAssessors || [];
         const listDiv = document.getElementById('votedList');
         if (alreadyVoted.length > 0) {
@@ -169,10 +182,9 @@
     
     const selectedAssessor = form.assessor.value;
 
-    // เช็คว่าชื่อที่เลือกซ้ำกับที่เคยส่งแล้วหรือไม่
     if (alreadyVoted.includes(selectedAssessor)) {
       alert("ขออภัย ท่าน (" + selectedAssessor + ") ได้ส่งคะแนนไปเรียบร้อยแล้ว ไม่สามารถส่งซ้ำได้");
-      return; // หยุดการทำงาน ไม่ส่งข้อมูลไป Google Sheets
+      return;
     }
 
     submitBtn.disabled = true;
@@ -187,7 +199,7 @@
         form.reset(); 
         loadingStatus.style.display = "none";
         submitBtn.disabled = false;
-        fetchSummary(); // โหลดข้อมูลใหม่เพื่อโชว์ชื่อคนล่าสุด
+        fetchSummary();
     })
     .catch(error => {
         console.error('Error!', error.message);
